@@ -37,10 +37,13 @@ public class SparkWebApp {
      * @return String HTML info
      */
     private static String inputDataPage(Request req, Response res) {
+        String data = req.queryParams("rad");
+        String function = req.queryParams("func");
+
         HttpResponse<String> jsonResponse
                 = null;
         try {
-            jsonResponse = Unirest.get("https://ancient-chamber-26329.herokuapp.com/getResults?rad=0.5&func=cos").asString();
+            jsonResponse = Unirest.get("https://ancient-chamber-26329.herokuapp.com/getResults?rad="+data+"&func="+function).asString();
         } catch (UnirestException e) {
             e.printStackTrace();
         }
