@@ -1,8 +1,9 @@
-# Aplicacion SparkWebAPP con servicio como Calculadora de estadística
+# TrigCalculator de la implementación del parcial I - AREP
 
-Esta libreria está implementada en **JAVA** para la materia de **AREP**
+Este repositorio está implementado en **JAVA** para la materia de **AREP**,
 
-Su principal funcionamiento se centra en una Calculadora de estadistica WEB con las funciones de **promedio** y **desviación media** implementadas, se ha realizado la construcción de una **Linked  List** a partir de la teoría conocida y por la cual se generan los calculos necesarios. el servicio web se encuentra alojado en Heroku.
+Tiene por función construir un servicio web que permita calcular las funciones trigonométricas. esta es la fachada 
+
 
 Para conocer mayor información de la implementación del sistema puede ver el documento [INFORME](AREP_TALLER02.pdf) o el [DIAGRAMA.](Diagram.asta)
 
@@ -10,11 +11,11 @@ Para conocer mayor información de la implementación del sistema puede ver el d
 
 
 Principalmente para dar un vistazo del funcionamiento en despliegue puede ir a la siguiente ruta en 
-[Heroku Deploy](https://frozen-castle-59599.herokuapp.com/datos) , aquí encontrará la aplicación corriendo.
+[Heroku Deploy](https://damp-mesa-00919.herokuapp.com/datos?rad=0.8&func=cos) , aquí encontrará la aplicación corriendo.
 
 se recomienda clonar el repositorio a su computadora, como opción puede realizarlo por medio del siguiente comando:
 
-``` git clone https://github.com/IJuanchoG/AREP_Taller_02_sparkWeb.git```
+``` git clone https://github.com/IJuanchoG/AREP_PARCIAL_TRIGCAL.git```
 
 La construcción del proyecto se ha realizado por medio de **MAVEN**, es por este motivo que puede ser necesario tener la herramienta en su dispositivo. 
 
@@ -45,9 +46,9 @@ java -cp target/classes;target/dependency/* edu.eci.arep.sparkwebapp.SparkWebApp
 java -cp target/classes:target/dependency/* edu.eci.arep.sparkwebapp.SparkWebApp
 ```
 
-de este modo la aplicación web se ejecutará en local con la siguiente [ruta.](http://localhost:4567/datos)
+de este modo la aplicación web se ejecutará en local con la siguiente [ruta.](http://localhost:4567/datos?rad=0.8&func=cos)
 ###2. por Heroku local
-```heroku local web``` dirigiendo a la siguiente [ruta.](http://localhost:5000/)
+```heroku local web``` dirigiendo a la siguiente [ruta.](http://localhost:5000/datos?rad=0.8&func=cos)
 
 
 
@@ -57,16 +58,9 @@ Para observar la aplicación en despliegue puede ejecutar el comando:
 
 ````heroku open```
 
-desplegando una pestaña que redirige a la siguiente [ruta.](https://frozen-castle-59599.herokuapp.com/datos) 
+desplegando una pestaña que redirige a la siguiente [ruta.](https://damp-mesa-00919.herokuapp.com/datos?rad=0.8&func=cos) 
 
-##Información de la lista encadenada creada: ejemplo.
 
- <img width="796" alt="LinkedLinkExample" src="https://user-images.githubusercontent.com/49318314/90288675-fdc3e080-de3f-11ea-856a-19bfed8bea59.png">
- 
- Igualmente, los valores calculados por parte de la sección dinámica.
- 
- <img width="165" alt="Desviacion" src="https://user-images.githubusercontent.com/49318314/90288600-d240f600-de3f-11ea-9111-1e5e5edcc77e.png">
- 
  ### Prerequisitos.
 
 Es necesario/recomendable que posea las siguientes herramientas:
@@ -85,36 +79,6 @@ si necesita instalar algunos de los servicios mencionados puede encontrarlos aqu
 
 - **Heroku** puede descargarlo [aqui.](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 
- ## Running the tests
-Las pruebas se corren por medio del comando:
-```
-mvn surefire:test
-```
-
-como resultado se ve lo siguiente:
-
-<img width="634" alt="pruebas" src="https://user-images.githubusercontent.com/49318314/90284000-d61c4a80-de36-11ea-83cd-441c4ecdb6c5.png">
-
-
-Estas pruebas son automáticas, si desea realizar más pruebas puede hacerlo manualmente o agregando más cualquiera de los archivos encontrados en la ruta **src\test\java\edu\eci\arep\msc\mystatcal**
-o en la ruta  **src\test\java\edu\eci\arep\msc\sparkwebapp**
-
-Las pruebas fueron realizadas a partir de casos de usos que seguramente se verían envueltos en el funcionamiento del programa. entre ellos tenemos pruebas como:
-
-```
-@Test
-    public void shouldAssignTypeDouble(){
-        MyOwnLinkedList parse = DataTypePersistence.parse(dataDouble);
-        assert parse != null;
-        Assert.assertEquals(parse.getDataType(),"double");
-    }
-```
-
- En la que se evalúa el correcto funcionamiento del programa a la hora de realizar un *parse* a los valores de los nodos
- 
-Las pruebas buscan de manera efectiva probar el funcionamiento del programa y como se desempeñaría en otros casos de uso
-
-
 
 ## Built With
 
@@ -126,39 +90,3 @@ Las pruebas buscan de manera efectiva probar el funcionamiento del programa y co
 ## Authors
 
 * **Juan Carlos García** - *Initial work* - [IJuanchoG](https://github.com/IJuanchoG)
-
-
-## License
-
-Este proyecto es de libre uso y distribución, para más detalles vea el archivo [LICENSE.md](LICENSE.md).
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
